@@ -12,20 +12,20 @@ const RepoStats = props => {
   return (
     <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
       <View>
-        <StyledText align='center' fontWeight='bold'>Stars</StyledText>
-        <StyledText align='center'>{parseThousands(props.stargazersCount)}</StyledText>
+        <StyledText align='center' fontWeight='bold'>{parseThousands(props.stargazersCount)}</StyledText>
+        <StyledText align='center'>Stars</StyledText>
       </View>
       <View>
-        <StyledText align='center' fontWeight='bold'>Forks</StyledText>
-        <StyledText align='center'>{parseThousands(props.forksCount)}</StyledText>
+        <StyledText align='center' fontWeight='bold'>{parseThousands(props.forksCount)}</StyledText>
+        <StyledText align='center'>Forks</StyledText>
       </View>
       <View>
-        <StyledText align='center' fontWeight='bold'>Reviews</StyledText>
-        <StyledText align='center'>{props.reviewCount}</StyledText>
+        <StyledText align='center' fontWeight='bold'>{props.reviewCount}</StyledText>
+        <StyledText align='center'>Reviews</StyledText>
       </View>
       <View>
-        <StyledText align='center' fontWeight='bold'>Rating</StyledText>
-        <StyledText align='center'>{props.ratingAverage}</StyledText>
+        <StyledText align='center' fontWeight='bold'>{props.ratingAverage}</StyledText>
+        <StyledText align='center'>Rating</StyledText>
       </View>
     </View>
   )
