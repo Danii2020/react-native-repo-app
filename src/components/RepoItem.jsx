@@ -15,8 +15,7 @@ const RepoItem = (props) => (
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    paddingBottom: 5,
-    paddingTop: 5,
+    paddingVertical: 5
   }
 });
 
