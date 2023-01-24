@@ -1,12 +1,13 @@
-import React from "react";
+import React  from "react";
 import { Text, FlatList } from "react-native";
-import repositories from "../data/repos";
 import RepoItem from "./RepoItem";
+import useRepos from "../hooks/useRepos";
 
 const RepoList = () => {
+  const { repos } = useRepos()
   return (
     <FlatList
-      data={repositories}
+      data={repos}
       ItemSeparatorComponent={() => <Text> </Text>}
       renderItem={({ item: repo }) => (
         <RepoItem {...repo} />
