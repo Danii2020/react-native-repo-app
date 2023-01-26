@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
+import { useLazyQuery } from "@apollo/client";
+import { GET_REPOS } from "../graphql/queries";
 
 const useRepos = () => {
-  const [repos, setRepos] = useState(null)
-
-  const fetchRepos = async () => {
-    const response = await globalThis.fetch('http://192.168.100.16:5000/api/repositories/')
-    const json = await response.json()
-    setRepos(json)
-  }
-
-  useEffect(() => {
-    fetchRepos()
-  }, [])
+  const { data={}, loading, refetch } = useLazyQuery(GET_REPOS, {
+    fetchPolicy: 'standby'
+  })
+  const { repos=null } = data
 
   const reposNodes = repos
     ? repos.edges.map(edge => edge.node)
     : []
 
-  return {repos: reposNodes}
+  return { loading, repos: reposNodes, refetch }
 }
 
 export default useRepos;
